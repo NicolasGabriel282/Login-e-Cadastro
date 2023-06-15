@@ -36,7 +36,6 @@
         <input type="submit" value="CADASTAR" class="botao"> 
         <br>
     </form>
-    <a href="login.php">Ja tem conta?</a>
     </div>
 
     </center>
