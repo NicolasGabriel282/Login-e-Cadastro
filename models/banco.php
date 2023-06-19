@@ -18,10 +18,15 @@ class Banco
         $dados = $stmt->fetchAll(PDO::FETCH_ASSOC);
         foreach($dados as $row)
         {
-                if($row['email'] == $email or $row['usuario'] == $nome)
+                if($row['email'] == $email )
                 {   
-                    return false;
+                    return "email";
                 }
+                elseif($row['usuario'] == $nome)
+                {
+                    return "user";
+                }
+                
         }
         $stmt = $conn -> prepare("INSERT INTO usuario(email,usuario,senha) 
             VALUES(:EMAIL,:USER,:SENHA)");
