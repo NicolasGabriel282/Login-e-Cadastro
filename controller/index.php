@@ -1,5 +1,5 @@
 <?php 
-    require '../models/banco.php';
+    require'../models/banco.php';
     require '../models/mensagens.php';
     header("Location:../views/cadastro.php");
 
@@ -9,22 +9,21 @@
                 $email = $_POST["email1"];
                 $usuario = $_POST["usuario1"];
                 $senha = $_POST["senha"];
-                if (Banco::cadastro($email,$usuario,$senha) == true)
-                {
-                    header("Location:../views/login.php");
-                }
             
                     if(Banco::cadastro($email,$usuario,$senha) == "email")
                     {
                         $mensagem="Email ja  cadastrado";
-                        $objeto= new Banco;
-                        $obeto->getMensagemCadastro($mensagem);
+                        $objeto= new Mensagem;
+                        return $objeto->getMensagemCadastro($mensagem);
                     }
                     elseif(Banco::cadastro($email,$usuario,$senha) == "user")
                     {
                         $mensagem="Nome de usuario ja  cadastrado";
-                        $objeto= new Banco;
-                        $obeto->getMensagemCadastro($mensagem);
+                        return $objeto->getMensagemCadastro($mensagem);
+                    }
+                    elseif(Banco::cadastro($email,$usuario,$senha)==true)
+                    {
+                        header("Location:../views/login.php");
                     }
             }    
             elseif(isset($_POST['email2']))

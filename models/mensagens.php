@@ -1,16 +1,16 @@
 <?php   
     class Mensagem
     {   
-        private $texto; 
+        private static $texto; 
 
         public function  getMensagemCadastro($mensagem)
         {
-            $this->texto = $mensagem;
+            self::$texto = $mensagem;
             return self::setMensagemCadastro();
         }
-        public function setMensagemCadastro()
+        private static function setMensagemCadastro()
         {
-            $mensagemCodificada = urlencode($this->texto);
+            $mensagemCodificada = urlencode(self::$texto);
             $url = "../views/cadastro.php?mensagem=" . $mensagemCodificada;
             header("Location: " . $url);
         }
