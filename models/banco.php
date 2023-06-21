@@ -1,5 +1,5 @@
 <?php 
-
+require 'exceptions.php';
 class Banco
 {
     private static function conexao()
@@ -20,11 +20,11 @@ class Banco
         {
                 if($row['email'] === $email )
                 {   
-                    return "email";
+                    throw new EmailExistente();
                 }
                 elseif($row['usuario'] === $nome)
                 {
-                    return "user";
+                    throw new UserExistente();
                 }
                 
         }

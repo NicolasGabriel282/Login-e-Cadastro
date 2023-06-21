@@ -11,20 +11,21 @@
                 $usuario = $_POST["usuario1"];
                 $senha = $_POST["senha"];
             
-                    if(Banco::cadastro($email,$usuario,$senha) === "email")
-                    {
-                        $mensagem="Email ja  cadastrado";
-                        return $objeto->getMensagemCadastro($mensagem);
-                    }
-                    elseif(Banco::cadastro($email,$usuario,$senha) === "user")
-                    {
-                        $mensagem="Nome de usuario ja  cadastrado";
-                        return $objeto->getMensagemCadastro($mensagem);
-                    }
-                    elseif(Banco::cadastro($email,$usuario,$senha)==true)
-                    {
-                        header("Location:../views/login.php");
-                    }
+                try
+                {
+                    Banco::cadastro($email,$usuario,$senha);
+                    header("Location:../views/paginainicial.php");
+                }
+                catch(EmailExistente $e)
+                {
+                    $mensagem="Email ja  cadastrado";
+                    return $objeto->getMensagemCadastro($mensagem);
+                }
+                catch(UserExistente $e)
+                {
+                    $mensagem="Nome de usuario ja  cadastrado";
+                    return $objeto->getMensagemCadastro($mensagem);
+                } 
             }    
             elseif(isset($_POST['email2']))
             {
