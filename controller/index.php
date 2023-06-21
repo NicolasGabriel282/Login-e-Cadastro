@@ -38,9 +38,7 @@
                else
                {
                 $mensagem = "Email ou senha incorreta";
-                $mensagemCodificada = urlencode($mensagem);
-                $url="../views/login.php?mensagem=" . $mensagemCodificada;
-                header("Location: " . $url);
+                return $objeto->getMensagemLogin($mensagem);
                }
             }   
         }
