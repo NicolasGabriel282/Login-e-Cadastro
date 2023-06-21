@@ -18,11 +18,11 @@ class Banco
         $dados = $stmt->fetchAll(PDO::FETCH_ASSOC);
         foreach($dados as $row)
         {
-                if($row['email'] == $email )
+                if($row['email'] === $email )
                 {   
                     return "email";
                 }
-                elseif($row['usuario'] == $nome)
+                elseif($row['usuario'] === $nome)
                 {
                     return "user";
                 }
