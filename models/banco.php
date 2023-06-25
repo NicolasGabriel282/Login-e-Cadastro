@@ -1,5 +1,6 @@
 <?php 
 require 'exceptions.php';
+require 'crypt.php';
 class Banco
 {
     private static function conexao()
@@ -7,6 +8,8 @@ class Banco
         $conn = new PDO("mysql:host=localhost;dbname=db_usuario","root","admin");
         return $conn;
     } 
+
+
     public static function cadastro($email,$nome,$senha)
     {
         $conn=self::conexao();
@@ -28,14 +31,19 @@ class Banco
                 }
                 
         }
+
+        $classCrypto= new Cripto();
+        $classCrypto-> setSenha($senha);
+        $senhaCripto= $classCrypto->criptografaSenha();
         $stmt = $conn -> prepare("INSERT INTO usuario(email,usuario,senha) 
             VALUES(:EMAIL,:USER,:SENHA)");
         $stmt->bindParam(":EMAIL",$email);
         $stmt->bindParam(":USER",$nome);
-        $stmt->bindParam(":SENHA",$senha);
+        $stmt->bindParam(":SENHA",$senhaCripto);
         $stmt->execute();
         return true;
     }
+
 
     public static function login($email,$senha)
     {

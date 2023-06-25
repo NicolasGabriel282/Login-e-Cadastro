@@ -14,7 +14,7 @@
                 try
                 {
                     Banco::cadastro($email,$usuario,$senha);
-                    header("Location:../views/paginainicial.php");
+                    header("Location:../views/login.php");
                 }
                 catch(EmailExistente $e)
                 {
