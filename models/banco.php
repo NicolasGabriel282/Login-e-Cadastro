@@ -53,7 +53,7 @@ class Banco
         $stmt->execute();
         $dados = $stmt->fetchAll(PDO::FETCH_ASSOC);
         foreach($dados as $row)
-            if ($row["email"]==$email and $row['senha'] == $senha)
+            if ($row["email"]==$email and password_verify($senha,$row['senha']))
                 {
                     return true;
                 }
