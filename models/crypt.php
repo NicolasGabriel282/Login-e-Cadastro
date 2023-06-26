@@ -18,11 +18,7 @@ class Cripto
         $senhaCripto= password_hash($senhaDescri,PASSWORD_DEFAULT);
         return $senhaCripto;
     }
-    public function validacaoSenha()
-    {
-        
 
-    }
 }
 
 
