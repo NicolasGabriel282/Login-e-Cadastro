@@ -18,7 +18,7 @@
     <form action="main.php" method="post">
         <input type="email" name="email2" id="email2" required placeholder="E-MAIL"> 
         <br>
-        <input type="password" required id="senha" name="senha" placeholder="SENHA">
+        <input type="password" required id="senha" name="senha" maxlength="15" minlength="6" placeholder="SENHA">
         <br>
         <?php
                 if (isset($_GET["mensagem"]))

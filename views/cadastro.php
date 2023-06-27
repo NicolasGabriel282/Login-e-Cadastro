@@ -21,8 +21,8 @@
         <br>
             <input type="text" name="usuario1" id="usuario1" maxlength="20" required  placeholder="USUARIO">
             <br>
-            <input type="password" name="senha" id="senha" maxlength="15" required placeholder="**********">
-        </label>
+            <input type="password" name="senha" pattern="\w" id="senha" maxlength="15" minlength="6" required placeholder="**********">
+            
         <br>
         <?php
                 if (isset($_GET["mensagem"]))
