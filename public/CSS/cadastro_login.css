@@ -48,10 +48,17 @@ input
     transition:0.5s ;
     opacity: 0.7;
 }
-p
+a
 {
-    font-size: small;
+    font-size: x-small;
     width: 200px;
+    color: white;
+}
+a:hover
+{
+    color: rgb(112, 112, 112);
+
+
 }
 .imagens
 {
@@ -71,15 +78,4 @@ hr
     border: none;
     border-top: 3px solid rgb(111, 111, 111);
 
-}
-a
-{
-    
-    color: white;
-    font-size: small;
-    height: 40px;
-    width: 150px;
-    margin-top: 300px;
-    margin-right: 100px;
-    padding-right: 111px;
 }

@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login</title>
-    <link rel="stylesheet" href="../public/CSS/static.css">
+    <link rel="stylesheet" href="../public/CSS/cadastro_login.css">
 </head>
 <body>
     <center>
@@ -18,7 +18,7 @@
     <form action="main.php" method="post">
         <input type="email" name="email2" id="email2" required placeholder="E-MAIL"> 
         <br>
-        <input type="password" required id="senha" name="senha" maxlength="15" minlength="6" placeholder="SENHA">
+        <input type="password" required id="senha" name="senha" placeholder="SENHA">
         <br>
         <?php
                 if (isset($_GET["mensagem"]))
@@ -29,6 +29,8 @@
                 ?> 
             
         <input type="submit" class="botao" value="LOGIN">
+        <br>
+       <p><a href="cadastro.php">Não tem cadastro? Clique aqui</a></p> 
     </form>
     </div>
     </center>

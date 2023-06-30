@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cadastro</title>
-    <link rel="stylesheet" href="../public/CSS/static.css">
+    <link rel="stylesheet" href="../public/CSS/cadastro_login.css">
 </head>
 <body>
     <center>
@@ -21,7 +21,7 @@
         <br>
             <input type="text" name="usuario1" id="usuario1" maxlength="20" required  placeholder="USUARIO">
             <br>
-            <input type="password" name="senha" pattern="\w" id="senha" maxlength="15" minlength="6" required placeholder="**********">
+            <input type="password" name="senha"  id="senha" maxlength="15" minlength="5" required placeholder="**********">
             
         <br>
         <?php
@@ -35,6 +35,7 @@
        
         <input type="submit" value="CADASTAR" class="botao"> 
         <br>
+        <p><a href="login.php">Ja tem cadasto? Clique aqui</a></p> 
     </form>
     </div>
 

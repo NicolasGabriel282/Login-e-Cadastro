@@ -1,7 +1,7 @@
 <?php 
     require'../models/banco.php';
     require '../models/mensagens.php';
-    header("Location:../views/cadastro.php");
+    header("Location:../views/login.php");
 
         if ($_SERVER['REQUEST_METHOD'] == "POST") {
             $objeto= new Mensagem;
