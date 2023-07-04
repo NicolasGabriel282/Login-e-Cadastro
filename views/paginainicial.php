@@ -7,6 +7,11 @@
     <link rel="stylesheet" href="../public/CSS/paginaInicial.css">
 </head>
 <body>
-    <h1>Pagina Inicial</h1>
+    <div class="blocoPrincipal">
+            <div class="blocoArquivos">
+            <h1>Pagina Inicial</h1>
+            <h5>Pastas</h5>
+            </div>
+    </div>
 </body>
 </html>

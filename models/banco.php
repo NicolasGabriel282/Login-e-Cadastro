@@ -13,7 +13,7 @@ class Banco
     public static function cadastro($email,$nome,$senha)
     {
         $conn=self::conexao();
-        $stmt=$conn -> prepare ("SELECT email,usuario from usuario where
+        $stmt=$conn -> prepare ("SELECT email,usuario from Usuarios where
          email = :EMAIL  or usuario = :USER");
         $stmt->bindParam(":EMAIL",$email);
         $stmt->bindParam(":USER",$nome);
@@ -35,7 +35,7 @@ class Banco
         $classCrypto= new Cripto();
         $classCrypto-> setSenha($senha);
         $senhaCripto= $classCrypto->criptografaSenha();
-        $stmt = $conn -> prepare("INSERT INTO usuario(email,usuario,senha) 
+        $stmt = $conn -> prepare("INSERT INTO Usuarios(email,usuario,senha) 
             VALUES(:EMAIL,:USER,:SENHA)");
         $stmt->bindParam(":EMAIL",$email);
         $stmt->bindParam(":USER",$nome);
@@ -48,7 +48,7 @@ class Banco
     public static function login($email,$senha)
     {
         $conn=self::conexao();
-        $stmt= $conn-> prepare("SELECT email,senha from usuario where email = :EMAIL");
+        $stmt= $conn-> prepare("SELECT email,senha from Usuarios where email = :EMAIL");
         $stmt->bindParam(":EMAIL",$email);
         $stmt->execute();
         $dados = $stmt->fetchAll(PDO::FETCH_ASSOC);
