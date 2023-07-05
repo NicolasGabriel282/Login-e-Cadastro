@@ -1,8 +1,17 @@
 <?php 
-    require'../models/banco.php';
-    require '../models/mensagens.php';
-    header("Location:../views/login.php");
+require'../models/banco.php';
+require '../models/mensagens.php';
+require '../models/cookie.php';
 
+if(isset($_COOKIE['DADOS_LOGIN']))
+    {
+        header("Location:../views/paginainicial.php");
+        exit();
+    }
+elseif(!isset($_COOKIE['DADOS_LOGIN']))
+    {
+    
+        header("Location:../views/login.php");
         if ($_SERVER['REQUEST_METHOD'] == "POST") {
             $objeto= new Mensagem;
             if(isset($_POST['email1']) and isset($_POST['usuario1']))
@@ -33,6 +42,9 @@
                 $senha= $_POST['senha'];
                if (Banco::login($email,$senha) == true)
                {
+                $objeto_cookie= new Cokkie();
+                $objeto_cookie->set_cookieEmail($email);
+                $objeto_cookie->cookie();
                 header("Location:../views/paginainicial.php");
                }
                else
@@ -42,4 +54,5 @@
                }
             }   
         }
+    }
 ?>
