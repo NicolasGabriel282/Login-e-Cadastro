@@ -16,6 +16,7 @@
     </div>    
     <div class="formulario">
     <form action="main.php" method="post">
+        @csrf
         <input type="email" name="email2" id="email2" required placeholder="E-MAIL"> 
         <br>
         <input type="password" required id="senha" name="senha" placeholder="SENHA">
@@ -30,7 +31,7 @@
             
         <input type="submit" class="botao" value="LOGIN">
         <br>
-       <p><a href="/cadastro">Não tem cadastro? Clique aqui</a></p> 
+       <p><a href="/">Não tem cadastro? Clique aqui</a></p> 
     </form>
     </div>
     </center>

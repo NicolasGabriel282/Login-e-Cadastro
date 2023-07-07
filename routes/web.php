@@ -2,7 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Login_CadastroController;
-
+use Illuminate\Http\Request;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -24,4 +24,11 @@ Route::get('/login', function () {
 });
 Route::get('/inicio', function () {
     return view('paginainicial');
+});
+
+Route::get('/token', function (Request $request) {
+    $token = $request->session()->token();
+ 
+    $token = csrf_token();
+    var_dump($token);
 });

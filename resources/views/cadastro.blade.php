@@ -18,11 +18,11 @@
     <br>
     <form method="post" action="/realizarCadastro">
         @csrf
-            <input type="email" name="email1" id="email1" required placeholder="E-MAIL"> 
+        <input type="email" name="email1" id="email1" required placeholder="E-MAIL"> 
         <br>
-            <input type="text" name="usuario1" id="usuario1" maxlength="20" required  placeholder="USUARIO">
-            <br>
-            <input type="password" name="senha"  id="senha" maxlength="15" minlength="5" required placeholder="**********">
+        <input type="text" name="usuario1" id="usuario1" maxlength="20" required  placeholder="USUARIO">
+        <br>
+        <input type="password" name="senha"  id="senha" maxlength="15" minlength="5" required placeholder="**********">
             
         <br>
         <?php

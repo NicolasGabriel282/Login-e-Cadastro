@@ -6,7 +6,7 @@ use App\Models\Mensagem;
 use App\Exceptions\UserExistente;
 use App\Exceptions\EmailExistente;
 use Illuminate\Http\Request;
-use Illuminate\support\Facades\Redirect;
+use Illuminate\Support\Facades\Redirect;
 
 class Login_CadastroController extends Controller
 {
@@ -15,8 +15,7 @@ public function cadastro(Request $request)
 {
     if(isset($_COOKIE['DADOS_LOGIN']))
         {
-            header("Location:../views/paginainicial.php");
-            exit();
+            return redirect('/paginainicial');
         }
                 $objeto= new Mensagem;
                     $email = $request->input("email1");
@@ -26,7 +25,7 @@ public function cadastro(Request $request)
                     try
                     {
                         Banco::cadastro($email,$usuario,$senha);
-                        redirect('/login');
+                        return redirect('/login');
                     }
                     catch(EmailExistente $e)
                     {
