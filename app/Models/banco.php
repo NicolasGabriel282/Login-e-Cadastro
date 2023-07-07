@@ -1,5 +1,6 @@
 <?php 
-require 'exceptions.php';
+namespace App\Models;
+use App\Models\Exceptions;
 require 'crypt.php';
 class Banco
 {

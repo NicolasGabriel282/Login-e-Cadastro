@@ -30,7 +30,7 @@
             
         <input type="submit" class="botao" value="LOGIN">
         <br>
-       <p><a href="cadastro.php">Não tem cadastro? Clique aqui</a></p> 
+       <p><a href="/cadastro">Não tem cadastro? Clique aqui</a></p> 
     </form>
     </div>
     </center>

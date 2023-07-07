@@ -1,4 +1,5 @@
 <?php   
+namespace App\Models;
     class Mensagem
     {   
         private static $texto; 

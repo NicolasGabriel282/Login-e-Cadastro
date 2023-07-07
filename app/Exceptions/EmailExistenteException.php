@@ -1,0 +1,1 @@
+class EmailExistente extends Exception{}
