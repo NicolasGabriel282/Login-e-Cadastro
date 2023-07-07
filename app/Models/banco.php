@@ -1,7 +1,9 @@
 <?php 
 namespace App\Models;
-use App\Models\Exceptions;
-require 'crypt.php';
+use PDO;
+use App\Exceptions\UserExistente;
+use App\Exceptions\EmailExistente;
+use App\Models\Cripto;
 class Banco
 {
     private static function conexao()

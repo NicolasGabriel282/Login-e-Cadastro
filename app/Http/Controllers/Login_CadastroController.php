@@ -1,31 +1,32 @@
 <?php 
+namespace App\Http\Controllers;
 use Illuminate\Routing\Controller;
 use App\Models\Banco;
 use App\Models\Mensagem;
-use App\Models\EmailExistente;
-use App\Models\UserExistente;
-
+use App\Exceptions\UserExistente;
+use App\Exceptions\EmailExistente;
+use Illuminate\Http\Request;
+use Illuminate\support\Facades\Redirect;
 
 class Login_CadastroController extends Controller
 {
 
-public function cadastro()
+public function cadastro(Request $request)
 {
     if(isset($_COOKIE['DADOS_LOGIN']))
         {
             header("Location:../views/paginainicial.php");
             exit();
         }
-            header("Location:../views/login.php");
                 $objeto= new Mensagem;
-                    $email = $_POST["email1"];
-                    $usuario = $_POST["usuario1"];
-                    $senha = $_POST["senha"];
+                    $email = $request->input("email1");
+                    $usuario = $request->input("usuario1");
+                    $senha =  $request->input("senha");
                 
                     try
                     {
                         Banco::cadastro($email,$usuario,$senha);
-                        header("Location:../views/login.php");
+                        redirect('/login');
                     }
                     catch(EmailExistente $e)
                     {

@@ -16,7 +16,8 @@
     </div>
     <div class="formulario">   
     <br>
-    <form method="post" action="main.php">
+    <form method="post" action="/realizarCadastro">
+        @csrf
             <input type="email" name="email1" id="email1" required placeholder="E-MAIL"> 
         <br>
             <input type="text" name="usuario1" id="usuario1" maxlength="20" required  placeholder="USUARIO">
