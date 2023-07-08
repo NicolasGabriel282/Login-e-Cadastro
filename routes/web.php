@@ -14,21 +14,20 @@ use Illuminate\Http\Request;
 |
 */
 
-Route::get('/', function () {
+Route::get('/cadastro', function () {
     return view('cadastro');
 });
 Route::post('/realizarCadastro',[Login_CadastroController::class,"cadastro"]);
 
+
 Route::get('/login', function () {
     return view('login');
 });
+
+
+
+
 Route::get('/inicio', function () {
     return view('paginainicial');
 });
 
-Route::get('/token', function (Request $request) {
-    $token = $request->session()->token();
- 
-    $token = csrf_token();
-    var_dump($token);
-});

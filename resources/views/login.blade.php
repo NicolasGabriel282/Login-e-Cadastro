@@ -5,13 +5,13 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login</title>
-    <link rel="stylesheet" href="../public/CSS/cadastro_login.css">
+    <link rel="stylesheet" href="{{ asset('css/cadastro_login.css')}}">   
 </head>
 <body>
     <center>
     <div class="imagens">   
         <span class="linha"> <hr> </span> 
-        <span> <img src="../public/Images/icons8-serviço-50 (1).png"> </span>
+        <span> <img src="{{asset('Images/icons8-serviço-50 (1).png')}}"> </span>
         <span class="linha"> <hr> </span>
     </div>    
     <div class="formulario">
@@ -31,7 +31,7 @@
             
         <input type="submit" class="botao" value="LOGIN">
         <br>
-       <p><a href="/">Não tem cadastro? Clique aqui</a></p> 
+       <p><a href="/cadastro">Não tem cadastro? Clique aqui</a></p> 
     </form>
     </div>
     </center>
