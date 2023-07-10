@@ -15,7 +15,7 @@
         <span class="linha"> <hr> </span>
     </div>    
     <div class="formulario">
-    <form action="main.php" method="post">
+    <form action="realizarLogin" method="post">
         @csrf
         <input type="email" name="email2" id="email2" required placeholder="E-MAIL"> 
         <br>

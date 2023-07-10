@@ -13,10 +13,6 @@ class Login_CadastroController extends Controller
 
 public function cadastro(Request $request)
 {
-    if(isset($_COOKIE['DADOS_LOGIN']))
-        {
-            return redirect('/paginainicial');
-        }
                     $email = $request->input("email1");
                     $usuario = $request->input("usuario1");
                     $senha =  $request->input("senha");
@@ -48,12 +44,13 @@ public function login()
                 $objeto_cookie= new Cookie();
                 $objeto_cookie->set_cookieEmail($email);
                 $objeto_cookie->cookie();
-                header("Location:../views/paginainicial.php");
+                return redirect('/inicio');
                }
                else
                {
                 $mensagem = "Email ou senha incorreta";
-                return $objeto->getMensagemLogin($mensagem);
+                $mensagemCodificada = urlencode($mensagem);
+                return redirect("/login?mensagem=" . $mensagemCodificada);
                }
             }   
         

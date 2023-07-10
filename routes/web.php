@@ -23,11 +23,12 @@ Route::post('/realizarCadastro',[Login_CadastroController::class,"cadastro"]);
 Route::get('/login', function () {
     return view('login');
 });
+Route::post("/realizarLogin", [Login_CadastroController::class,"login"]);
 
 
 
 
 Route::get('/inicio', function () {
-    return view('paginainicial');
+    return view('inicio');
 });
 ?>
