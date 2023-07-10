@@ -30,4 +30,4 @@ Route::get('/login', function () {
 Route::get('/inicio', function () {
     return view('paginainicial');
 });
-
+?>

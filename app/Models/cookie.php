@@ -1,5 +1,6 @@
 <?php
-class Cokkie
+namespace App\Models;
+class Cookie
 {
     private $emailUsuario;
 

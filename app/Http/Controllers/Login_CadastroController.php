@@ -2,7 +2,7 @@
 namespace App\Http\Controllers;
 use Illuminate\Routing\Controller;
 use App\Models\Banco;
-use App\Models\Mensagem;
+use App\Models\Cookie;
 use App\Exceptions\UserExistente;
 use App\Exceptions\EmailExistente;
 use Illuminate\Http\Request;
@@ -17,7 +17,6 @@ public function cadastro(Request $request)
         {
             return redirect('/paginainicial');
         }
-                $objeto= new Mensagem;
                     $email = $request->input("email1");
                     $usuario = $request->input("usuario1");
                     $senha =  $request->input("senha");
@@ -30,22 +29,23 @@ public function cadastro(Request $request)
                     catch(EmailExistente $e)
                     {
                         $mensagem="Email ja  cadastrado";
-                        return $objeto->getMensagemCadastro($mensagem);
+                        $mensagemCodificada = urlencode($mensagem);
+                        return redirect("/cadastro?mensagem=" . $mensagemCodificada);
                     }
                     catch(UserExistente $e)
                     {
                         $mensagem="Nome de usuario ja  cadastrado";
-                        return $objeto->getMensagemCadastro($mensagem);
+                        $mensagemCodificada = urlencode($mensagem);
+                        return redirect("/cadastro?mensagem=" . $mensagemCodificada);
                     }    
 }
 public function login()
 {
-                $objeto= new Mensagem;
                 $email = $_POST['email2'];
                 $senha= $_POST['senha'];
                if (Banco::login($email,$senha) == true)
                {
-                $objeto_cookie= new Cokkie();
+                $objeto_cookie= new Cookie();
                 $objeto_cookie->set_cookieEmail($email);
                 $objeto_cookie->cookie();
                 header("Location:../views/paginainicial.php");

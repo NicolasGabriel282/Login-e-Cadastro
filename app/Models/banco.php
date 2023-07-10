@@ -1,5 +1,5 @@
 <?php 
-namespace App\Models;
+namespace app\Models;
 use PDO;
 use App\Exceptions\UserExistente;
 use App\Exceptions\EmailExistente;
