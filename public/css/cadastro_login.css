@@ -53,6 +53,7 @@ a
     font-size: x-small;
     width: 200px;
     color: white;
+    margin-bottom: 150px;
 }
 a:hover
 {
@@ -77,5 +78,11 @@ hr
 {
     border: none;
     border-top: 3px solid rgb(111, 111, 111);
-
+}
+p
+{
+    margin-top: 5px;
+    font-size: x-small;
+    width: 200px;
+    color: white;
 }
