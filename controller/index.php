@@ -10,7 +10,7 @@ header("Location:../views/login.php");
                 $email = $_POST["email1"];
                 $usuario = $_POST["usuario1"];
                 $senha = $_POST["senha"];
-            
+     
                 try
                 {
                     Banco::cadastro($email,$usuario,$senha);
@@ -31,12 +31,15 @@ header("Location:../views/login.php");
             {
                 $email = $_POST['email2'];
                 $senha= $_POST['senha'];
+                //echo "Mais ou menos";
                if (Banco::login($email,$senha) == true)
                {
                 header("Location:../views/paginainicial.php");
+                //echo "OK";
                }
                else
                {
+                //echo"ERRO";
                 $mensagem = "Email ou senha incorreta";
                 return $objeto->getMensagemLogin($mensagem);
                }

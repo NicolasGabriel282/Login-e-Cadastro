@@ -15,7 +15,7 @@
         <span class="linha"> <hr> </span>
     </div>    
     <div class="formulario">
-    <form  method="post">
+    <form  method="post" action="index.php">
         <input type="email" name="email2" id="email2" required placeholder="E-MAIL"> 
         <br>
         <input type="password" required id="senha" name="senha" placeholder="SENHA">
@@ -29,8 +29,6 @@
                 ?> 
             
         <input type="submit" class="botao" value="LOGIN">
-        <br>
-        <p><a href="updateSenha.php">Esqueceu a senha?</a></p>
         <br>
        <p><a href="cadastro.php">Não tem cadastro? Clique aqui</a></p> 
 

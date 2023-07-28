@@ -45,7 +45,8 @@ class Banco
     }
 
 
-    public static function login($email,$senha)
+    public static function 
+    login($email,$senha)
     {
         $conn=self::conexao();
         $stmt= $conn-> prepare("SELECT email,senha from Usuarios where email = :EMAIL");
